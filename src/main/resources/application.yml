@@ -1,0 +1,29 @@
+server:
+    port: 8081
+spring:
+    profiles:
+        active: dev
+---
+spring:
+    profiles: dev
+    rabbitmq:
+        host: ${RABBIT_MQ_HOST:10.220.201.70}
+        port: ${RABBIT_MQ_PORT:5672}
+        username: admin
+        password: 123456
+        publisher-returns: true
+        publisher-confirm-type: correlated
+        listener:
+            direct:
+                acknowledge-mode: manual
+                retry:
+                    enabled: true
+                    max-attempts: 3
+                    max-interval: 10000
+            simple:
+                acknowledge-mode: manual
+                retry:
+                    enabled: true
+                    max-attempts: 3
+                    max-interval: 10000
+
