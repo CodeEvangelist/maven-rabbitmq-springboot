@@ -17,7 +17,8 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class MqReceiver {
 
-    @RabbitListener(queues = "postbar-test-three")
+    //此注解可以设置消费者的并发数量、并发使用的执行器等等属性~~
+    @RabbitListener(queues = "postbar-test-three",concurrency = "10")
     public void mqReceiver(String msg, Channel channel, Message message) throws Exception {
         log.info("message is:{}",msg);
         //log.info("message id:{}",message.getMessageProperties().getDeliveryTag());
