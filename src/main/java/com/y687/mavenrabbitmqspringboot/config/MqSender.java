@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
 
 /**
  * Description
@@ -20,7 +21,7 @@ import javax.annotation.PostConstruct;
 @Slf4j
 public class MqSender implements RabbitTemplate.ConfirmCallback, RabbitTemplate.ReturnCallback{
 
-    @Autowired
+    @Resource
     private RabbitTemplate rabbitTemplate;
 
 
