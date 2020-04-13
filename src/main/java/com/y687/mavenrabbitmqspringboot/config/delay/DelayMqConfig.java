@@ -1,4 +1,4 @@
-package com.y687.mavenrabbitmqspringboot.config;
+package com.y687.mavenrabbitmqspringboot.config.delay;
 
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;

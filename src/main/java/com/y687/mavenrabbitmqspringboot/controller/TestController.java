@@ -1,6 +1,6 @@
 package com.y687.mavenrabbitmqspringboot.controller;
 
-import com.y687.mavenrabbitmqspringboot.config.MqSender;
+import com.y687.mavenrabbitmqspringboot.config.basic.MqSender;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

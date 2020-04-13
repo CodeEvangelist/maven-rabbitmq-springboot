@@ -1,4 +1,4 @@
-package com.y687.mavenrabbitmqspringboot.config;
+package com.y687.mavenrabbitmqspringboot.config.basic;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Message;

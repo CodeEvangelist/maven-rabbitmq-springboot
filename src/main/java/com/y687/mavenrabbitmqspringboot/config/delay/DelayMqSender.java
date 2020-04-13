@@ -1,4 +1,4 @@
-package com.y687.mavenrabbitmqspringboot.config;
+package com.y687.mavenrabbitmqspringboot.config.delay;
 
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;

@@ -1,4 +1,4 @@
-package com.y687.mavenrabbitmqspringboot.config;
+package com.y687.mavenrabbitmqspringboot.config.basic;
 
 import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;

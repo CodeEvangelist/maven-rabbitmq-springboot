@@ -1,4 +1,4 @@
-package com.y687.mavenrabbitmqspringboot.config;
+package com.y687.mavenrabbitmqspringboot.config.basic;
 
 import com.rabbitmq.client.Channel;
 import lombok.extern.slf4j.Slf4j;
@@ -7,28 +7,24 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 /**
- * 延时消息接收
+ * Description
  *
  * @Author bin.yin
- * @createTime 2020/4/13 16:57
+ * @createTime 2019/10/25 15:28
  * @Version
  */
-@Slf4j
 @Component
-public class DelayMqReceiver {
-    /**
-     * 延时消息接收
-     * @param msg
-     * @param channel
-     * @param message
-     * @throws Exception
-     */
-    @RabbitListener(queues = {"com.wenwo.admin.manager.appointment.delayQueue"})
-    public void receiver(String msg, Channel channel, Message message) throws Exception {
+@Slf4j
+public class MqReceiver {
+
+    //此注解可以设置消费者的并发数量、并发使用的执行器等等属性~~
+    @RabbitListener(queues = "postbar-test-three",concurrency = "10")
+    public void mqReceiver(String msg, Channel channel, Message message) throws Exception {
         log.info("message is:{}",msg);
         //log.info("message id:{}",message.getMessageProperties().getDeliveryTag());
         //channel.basicAck(message.getMessageProperties().getDeliveryTag(),false);
         channel.basicReject(message.getMessageProperties().getDeliveryTag(),false);
         throw  new Exception("消息异常");
+
     }
 }
